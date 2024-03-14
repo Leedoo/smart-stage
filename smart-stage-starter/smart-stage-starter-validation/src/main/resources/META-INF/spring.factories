@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.smart.validation.config.ValidationConfig,\
+com.smart.validation.handler.DefaultValidationHandler
