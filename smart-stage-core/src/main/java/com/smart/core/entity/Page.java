@@ -1,33 +1,37 @@
 package com.smart.core.entity;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * 自定义分页
+ * 分页实体
  * 注：避免ORM异构带来的RPC分页实体转换
  *
  * @author Joe
  */
-@ApiModel(description = "分页")
 public class Page<T> {
 
-    @ApiModelProperty("返回记录列表")
+    /**
+     * 返回记录列表
+     */
     protected List<T> records;
 
-    @ApiModelProperty("总记录数")
+    /**
+     * 总记录数
+     */
     protected long total;
 
-    @ApiModelProperty("每页记录数")
-    protected long size;
-
-    @ApiModelProperty("当前页")
+    /**
+     * 当前页
+     */
     protected long current;
+
+    /**
+     * 每页记录数
+     */
+    protected long size;
 
     public Page() {
         this.records = Collections.emptyList();

@@ -10,13 +10,24 @@ public interface IErrorCode extends IMessage {
     /**
      * 错误码
      */
-    String getCode();
+    Integer getCode();
+
+    /**
+     * 错误码描述
+     */
+    default String getDesc(){
+        return getKey();
+    }
 
     /**
      * 错误码code用做I18n的key
      */
-    @Override
     default String getKey() {
-        return getCode();
+        return getCode().toString();
+    }
+
+    @Override
+    default String getMessage(Object... args) {
+        return Message.getOrDefault(getKey(), getDesc(), args);
     }
 }

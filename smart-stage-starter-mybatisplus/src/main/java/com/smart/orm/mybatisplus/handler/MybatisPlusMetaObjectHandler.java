@@ -2,12 +2,10 @@ package com.smart.orm.mybatisplus.handler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import com.smart.orm.mybatisplus.entity.BaseEntity;
-import lombok.Setter;
 import org.apache.ibatis.reflection.MetaObject;
 
 import java.util.Date;
 
-@Setter
 public class MybatisPlusMetaObjectHandler implements MetaObjectHandler {
 
     /**

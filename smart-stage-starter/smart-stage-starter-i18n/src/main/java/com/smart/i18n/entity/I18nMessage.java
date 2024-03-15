@@ -1,7 +1,8 @@
 package com.smart.i18n.entity;
 
 import com.smart.core.entity.Message;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 
@@ -11,8 +12,9 @@ import java.util.Objects;
 /**
  * 国际化支持
  */
-@Slf4j
 public class I18nMessage extends Message {
+
+    private static final Logger log = LoggerFactory.getLogger(I18nMessage.class);
 
     private static MessageSource messageSource;
 

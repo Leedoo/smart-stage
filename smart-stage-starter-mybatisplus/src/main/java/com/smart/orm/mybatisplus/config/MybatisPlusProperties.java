@@ -1,11 +1,17 @@
 package com.smart.orm.mybatisplus.config;
 
-import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@Data
-@ConfigurationProperties("smart.mybatis-plus")
+@ConfigurationProperties("stage.mybatis-plus")
 public class MybatisPlusProperties {
 
     private String pageDbType;
+
+    public String getPageDbType() {
+        return pageDbType;
+    }
+
+    public void setPageDbType(String pageDbType) {
+        this.pageDbType = pageDbType;
+    }
 }

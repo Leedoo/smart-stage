@@ -1,47 +1,44 @@
 package com.smart.core.entity;
 
 import com.smart.core.enums.ResultEnum;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.experimental.Accessors;
 
 import java.beans.Transient;
 
-@ApiModel(description = "响应结果")
-@Data
-@Accessors(chain = true)
+/**
+ * 响应结果
+ */
 public class Result<T> {
 
-	@ApiModelProperty("结果体")
-	protected T data;
+	/**
+	 * 响应码
+	 */
+	private Integer code;
 
-	@ApiModelProperty("状态码")
-	protected String code;
+	/**
+	 * 消息
+	 */
+	private String msg;
 
-	@ApiModelProperty("消息")
-	protected String message;
+	/**
+	 * 数据
+	 */
+	private T data;
 
-	private Result() {
-		super();
+	public Result() {
 	}
 
-	public static <T> Result<T> create() {
-		return new Result<>();
+	public Result(Integer code, String msg) {
+		this.code = code;
+		this.msg = msg;
 	}
 
-	public static <T> Result<T> create(String code) {
-		Result<T> r = create();
-		return r.setCode(code);
-	}
-
-	public static <T> Result<T> create(String code, String message) {
-		Result<T> r = create(code);
-		return r.setMessage(message);
+	public Result(Integer code, String msg, T data) {
+		this(code, msg);
+		this.data = data;
 	}
 
 	public static <T> Result<T> success() {
-		return create(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMessage());
+		return new Result<>(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMessage());
 	}
 
 	public static <T> Result<T> success(T data) {
@@ -50,19 +47,48 @@ public class Result<T> {
 		return r;
 	}
 
-	public static <T> Result<T> success(T data, String message) {
-		Result<T> r = success(data);
-		r.setMessage(message);
-		return r;
+	public static <T> Result<T> error() {
+		return new Result<>(ResultEnum.ERROR.getCode(), ResultEnum.ERROR.getMessage());
+	}
+
+	public Integer getCode() {
+		return code;
+	}
+
+	public Result<T> setCode(Integer code) {
+		this.code = code;
+		return this;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public Result<T> setMsg(String msg) {
+		this.msg = msg;
+		return this;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public Result<T> setData(T data) {
+		this.data = data;
+		return this;
 	}
 
 	@Transient
 	public boolean isSuccess() {
-		return ResultEnum.SUCCESS.getCode().equals(code);
+		return ResultEnum.SUCCESS.getCode().equals(this.code);
 	}
 
 	@Override
 	public String toString() {
-		return "Result [data=" + data + ", code=" + code + ", message=" + message + "]";
+		return "Result{" +
+				"code=" + code +
+				", msg='" + msg + '\'' +
+				", data=" + data +
+				'}';
 	}
 }

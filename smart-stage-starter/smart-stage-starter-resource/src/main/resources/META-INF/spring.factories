@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.smart.resource.config.PluginMessageSourceConfig
+
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.smart.resource.processor.PluginEnvironmentPostProcessor

@@ -27,6 +27,10 @@
         </dependency>
         <dependency>
             <groupId>com.smart</groupId>
+            <artifactId>smart-stage-starter-resource</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.smart</groupId>
             <artifactId>smart-stage-starter-swagger</artifactId>
         </dependency>
         <dependency>

@@ -16,25 +16,25 @@ public interface BaseService<T> extends IService<T> {
     /**
      * 提供新的分页方法，统一分页返回Entity
      *
-     * @param page
-     * @param limit
+     * @param current
+     * @param size
      * @return
      */
-    default Page<T> findPage(long page, long limit) {
-        IPage<T> t = page(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(page, limit));
+    default Page<T> findPage(long current, long size) {
+        IPage<T> t = page(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(current, size));
         return PageHelper.convert(t);
     }
 
     /**
      * 提供新的分页方法，统一分页返回Entity
      *
-     * @param page
-     * @param limit
+     * @param current
+     * @param size
      * @param wrapper
      * @return
      */
-    default Page<T> findPage(long page, long limit, Wrapper<T> wrapper) {
-        IPage<T> t = page(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(page, limit), wrapper);
+    default Page<T> findPage(long current, long size, Wrapper<T> wrapper) {
+        IPage<T> t = page(new com.baomidou.mybatisplus.extension.plugins.pagination.Page<>(current, size), wrapper);
         return PageHelper.convert(t);
     }
 }

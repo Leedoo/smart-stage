@@ -8,22 +8,13 @@
         <artifactId>smart-stage-starter-parent</artifactId>
         <version>${revision}</version>
     </parent>
-    <artifactId>smart-stage-starter-i18n</artifactId>
+    <artifactId>smart-stage-starter-resource</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>com.smart</groupId>
-            <artifactId>smart-stage-core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 </project>

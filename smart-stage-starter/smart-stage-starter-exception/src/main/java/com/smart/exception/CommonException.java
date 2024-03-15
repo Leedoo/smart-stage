@@ -1,26 +1,44 @@
 package com.smart.exception;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.smart.core.enums.ResultEnum;
 
-@Getter
-@Setter
+/**
+ * 异常基类
+ */
 public class CommonException extends RuntimeException {
 
-    private String code;
+    private Integer code;
 
-    public CommonException(String code) {
+    public CommonException(Integer code) {
         super();
         this.code = code;
     }
 
-    public CommonException(String code, String message) {
+    public CommonException(String message) {
+        super(message);
+        this.code = ResultEnum.ERROR.getCode();
+    }
+
+    public CommonException(Integer code, String message) {
         super(message);
         this.code = code;
     }
 
-    public CommonException(String code, String message, Throwable cause) {
+    public CommonException(Integer code, Throwable cause, String message) {
         super(message, cause);
+        this.code = code;
+    }
+
+    public CommonException(Integer code, Throwable cause) {
+        super(cause);
+        this.code = code;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public void setCode(Integer code) {
         this.code = code;
     }
 }

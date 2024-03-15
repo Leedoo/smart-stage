@@ -1,7 +1,5 @@
 package com.smart.core.entity;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.text.MessageFormat;
 
 /**
@@ -10,7 +8,6 @@ import java.text.MessageFormat;
  *
  * @author Joe
  */
-@Slf4j
 public abstract class Message {
 
     /**
@@ -26,7 +23,6 @@ public abstract class Message {
             try {
                 return MessageFormat.format(defaultValue, args);
             } catch (Exception e) {
-                log.error(e.getMessage());
                 return defaultValue;
             }
         }

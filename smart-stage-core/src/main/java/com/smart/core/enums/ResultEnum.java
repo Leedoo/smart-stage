@@ -1,22 +1,31 @@
 package com.smart.core.enums;
 
 import com.smart.core.entity.IErrorCode;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 /**
  * @author Joe
  */
-@Getter
-@AllArgsConstructor
 public enum ResultEnum implements IErrorCode {
 
-    SUCCESS("200", "成功"),
-    ERROR("-1000", "系统内部错误"),
-    PARAM_ERROR("-2001", "请求参数缺失"),
-    PARAM_TYPE_ERROR("-2002", "请求参数类型错误"),
-    VALIDATION_ERROR("-3000", "数据校验错误");
+    SUCCESS(200, "成功"),
+    ERROR(-1000, "系统内部错误"),
+    VALIDATION_ERROR(-2000, "参数校验错误");
 
-    private String code;
+    private Integer code;
     private String desc;
+
+    ResultEnum(Integer code, String desc) {
+        this.code = code;
+        this.desc = desc;
+    }
+
+    @Override
+    public Integer getCode() {
+        return code;
+    }
+
+    @Override
+    public String getDesc() {
+        return desc;
+    }
 }
