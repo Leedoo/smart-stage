@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.smart.i18n.config.I18nConfig
+com.smart.stage.i18n.config.I18nConfig
