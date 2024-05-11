@@ -13,7 +13,7 @@ public interface IErrorCode extends IMessage {
     Integer getCode();
 
     /**
-     * 错误码描述
+     * 错误码默认描述，可覆盖
      */
     default String getDesc(){
         return getKey();
@@ -22,6 +22,7 @@ public interface IErrorCode extends IMessage {
     /**
      * 错误码code用做I18n的key
      */
+    @Override
     default String getKey() {
         return getCode().toString();
     }

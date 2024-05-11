@@ -16,8 +16,8 @@
 
 	<modules>
 		<module>smart-stage-core</module>
+		<module>smart-stage-starter-parent</module>
 		<module>smart-stage-starter</module>
-		<module>smart-stage-starter-all</module>
 		<module>smart-stage-starter-mybatisplus</module>
 	</modules>
 
@@ -39,11 +39,6 @@
 			<dependency>
 				<groupId>com.smart</groupId>
 				<artifactId>smart-stage-core</artifactId>
-				<version>${revision}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.smart</groupId>
-				<artifactId>smart-stage-starter-common</artifactId>
 				<version>${revision}</version>
 			</dependency>
 			<dependency>
