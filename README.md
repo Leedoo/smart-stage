@@ -403,7 +403,7 @@ public Result update(@RequestBody @Validated Demo entity) {
 }
 ```
 #### 国际化支持
-支持以错误码枚举的code作为国际化key方式定义资源消息
+支持以错误码枚举的code作为国际化key方式定义资源消息   
 messages_zh_CN.properties
 ```
 1001=主键不能为空
