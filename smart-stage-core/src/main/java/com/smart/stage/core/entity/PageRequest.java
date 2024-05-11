@@ -27,9 +27,4 @@ public class PageRequest {
     public void setSize(Long size) {
         this.size = size;
     }
-
-    public static void main(String[] args) {
-        String phone = "13812345678";
-        System.out.println(phone.replaceAll("(\\d{3}).*(\\d{4})", "$1****$2"));
-    }
 }

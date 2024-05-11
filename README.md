@@ -1,19 +1,22 @@
-### 概述
+## 概述
 
-Smart是基于SpringBoot构建的微服务增强框架。它不仅统一了异常、国际化、文档、校验等处理规范，还引入了对配置文件进行分拆的新型开发方法。使用它作为技术底座的多模块应用，前期可以将模块组合实现单体部署。跟随业务的发展，在无代码改动的情况下，又具备将模块独立成微服务的能力，实现分阶降本增效。
+### 简介
+
+smart-stage是基于SpringBoot构建的微服务增强框架。它不仅统一了响应报文、异常、国际化、文档、校验等公共机制的处理规范，还引入了插件机制的新型开发方法。通过将其作为技术底座，应用前期可以将多个业务模块合并成单体应用部署启动。跟随业务的发展，无需修改代码的前提下，框架提供了将模块独立成微服务的能力，实现分阶降本增效。
 
 ### 组件介绍
 
   ```
-smart                                         应用名称
-├── smart-core                                核心模块，统一响应报文
-├── smart-starter                             装配父模块
-│   ├── smart-starter-exception               异常模块，统一异常基类，拦截结果处理，国际化支持
-│   ├── smart-starter-i18n                    国际化模块，多国家语言处理
-│   ├── smart-starter-swagger                 文档模块，Swagger规范
-│   ├── smart-starter-validation              校验模块，集成SpringBoot Validation，国际化支持
-├── smart-starter-web                         组装模块，SpringBoot Web基础和装配模块公共能力的组装
-├── smart-starter-web-mybatisplus             组装扩展MybatisPlus模块，贯标分页实体、公共字段及公共字段的自动赋值能力
+smart-stage                                         应用名称
+├── smart-stage-core                                核心模块，统一响应报文
+├── smart-stage-starter-parent                      装配父模块
+│   ├── smart-stage-starter-exception               异常模块，统一异常基类，拦截结果处理，国际化支持
+│   ├── smart-stage-starter-i18n                    国际化模块，多国家语言处理
+│   ├── smart-stage-starter-swagger                 文档模块，Swagger规范
+│   ├── smart-stage-starter-validation              校验模块，集成SpringBoot Validation，国际化支持
+│   ├── smart-stage-starter-resource                资源模块，为应用加载合并资源配置文件，插件机制核心
+├── smart-stage-starter                             组装模块，SpringBoot Web基础和装配模块5大公共能力的组装
+├── smart-stage-starter-mybatisplus                 组装扩展MybatisPlus模块，贯标公共字段及其变更自动赋值的功能
   ```
 
 ### 依赖关系
@@ -25,22 +28,24 @@ smart                                         应用名称
 | 技术                   | 版本    | 说明             |
 | ---------------------- | ------- | ---------------- |
 | spring-boot             | 2.5.13   | 容器+MVC框架     |
-| mybatis                | 3.5.10   | ORM框架          |
-| mybatis-plus           | 3.5.2   | MyBatis增强工具  |
-| hibernate-validator    | 6.2.3.Final   | 校验  |
-| swagger      | 3.0.0   | 文档     |
+| spring-boot-starter-validation    | 2.5.13   | 校验  |
+| druid-spring-boot-starter                | 1.2.8   | 数据库连接池          |
+| mybatis-plus-boot-starter           | 3.5.2   | MyBatis增强工具  |
+| springfox-boot-starter      | 3.0.0   | 文档     |
 
-### 特色
-1.统一响应报文、异常、国际化、文档、校验等处理规范
+### 能力说明
 
-2.标准化ORM层公共字段及其变更自动赋值能力
+1. **统一处理规范：** 实现了对响应报文、异常、国际化、文档、校验等公共机制的处理规范；
 
-3.解决ORM框架分页实现各行其道带来的RPC调用分页实体转换、前端多套分页逻辑等问题
+2. **ORM层标准化：** 提供了标准化ORM层公共字段及其变更自动赋值的功能；
 
-4.引入模块对配置文件进行分拆的新型开发方法，以便应用能按需选择单体还是微服务的部署方式
+3. **灵活部署支持：** 支持按业务垂直拆分的多模块应用，可按需选择单体或模块微服务的方式部署，在单体部署时，模块之间的API调用采用本地调用，而模块独立微服务方式下，自动切换成远程调用；
 
-### 扩展性
-任意smart-starter-xxx模块装配的Bean都支持自定义扩展覆盖的能力
+4. **插件机制：** 引入了插件机制，应用对插件的使用能够以插拔的方式完成实现切换，以适应不同项目和不同的交付场景；
+
+5. **脚手架支持：** 提供了适用于不同需求场景的多款应用脚手架供选择，帮助用户快速上手；
+
+6. **高度扩展性：** 装配模块的5大公共能力都是无耦合设计，任意模块的排除不影响其它模块的使用，且模块包含的装配Bean都允许自定义扩展覆盖，提升了系统的整体扩展性。
 
 ### 示例
-示例工程[smart-sample](https://github.com/a466350665/smart-sample)
+示例工程[smart-stage-sample](https://github.com/a466350665/smart-stage-sample)
