@@ -318,7 +318,7 @@ message.test1=I18n message test
 message.test2=I18n message test, param1:{0},param2:{1}
 ```
 #### 使用方式
-1.自定义枚举实现IMessage接口。(推荐)
+第一种：自定义枚举实现IMessage接口。(推荐)
 ```
 import com.smart.stage.common.core.entity.IMessage;
 
@@ -341,7 +341,7 @@ public enum MessageEnum implements IMessage {
 String test1 = MessageEnum.TEST1.getMessage();
 String test2 = MessageEnum.TEST2.getMessage("p1", "p2");
   ```
-2.直接使用Message工具类。
+第二种：直接使用Message工具类。
 ```
 import com.smart.stage.common.core.entity.Message;
 
