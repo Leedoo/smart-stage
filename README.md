@@ -13,7 +13,7 @@ smart-stage                                         应用名称
 │   ├── smart-stage-starter-resource                资源模块，为应用加载合并资源配置文件，插件机制核心
 │   ├── smart-stage-starter-swagger                 文档模块，Swagger规范
 │   ├── smart-stage-starter-validation              校验模块，集成SpringBoot Validation，国际化支持
-├── smart-stage-starter                             组装模块，SpringBoot Web基础和装配模块5大公共能力的组装
+├── smart-stage-starter                             组装模块，SpringBoot基础和装配模块5大公共能力的组装
 ├── smart-stage-starter-mybatisplus                 组装扩展MybatisPlus模块，贯标公共字段及其变更自动赋值的功能
   ```
 
