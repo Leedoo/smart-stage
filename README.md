@@ -194,7 +194,7 @@ public Result add(@RequestBody @Validated Demo entity) {
 }
 ```
 #### 国际化支持
-上述{demo.code}为国际化配置文件定义的key
+上述{demo.code}为国际化配置文件定义的key   
 messages_zh_CN.properties
 ```
 demo.code=编码不能为空
