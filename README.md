@@ -1,6 +1,6 @@
 ## 简介
 
-smart-stage是基于SpringBoot构建的微服务增强框架，旨在统一异常、国际化、文档、校验等公共机制的处理规范。同时，它还引入了插件机制，让应用的每个业务模块能够灵活支持插拔，也兼顾单体和微服务的启动方式。
+smart-stage是一个构建在SpringBoot之上的微服务增强框架，其主要目标是为公共机制的处理提供规范。此外，它还引入了一种插件机制，使得应用的每个业务模块能够被抽象为一个微服务插件。这种设计不仅支持单个插件的启动，也兼顾了多个插件的组合启动。
 
 ## 组件介绍
 
@@ -58,14 +58,14 @@ smart-stage                                         应用名称
   ```
 
 ### 国际化
-#### 资源文件存放目录
 SpringBoot默认从项目的resources/目录读取，推荐存放resources/i18n目录。标准配置如下：
 ```
 spring:
   messages:
     basename: i18n/messages
 ```
-#### 资源文件配置
+
+资源文件配置示例：
 messages_zh_CN.properties
 ```
 message.test1=国际化消息测试
@@ -76,7 +76,8 @@ messages_en_US.properties
 message.test1=I18n message test
 message.test2=I18n message test, param1:{0},param2:{1}
 ```
-#### 使用方式
+
+支持以下两种使用方式   
 第一种：自定义枚举实现IMessage接口。(推荐)
 ```
 import com.smart.stage.common.core.entity.IMessage;
@@ -108,14 +109,14 @@ String test1 = Message.get("message.test1");
 String test2 = Message.get("message.test2", "p1", "p2");
   ```
 
-#### 请求参数说明
-国际化是前端通过在http请求头传递参数来告知后端当前使用的语言，推荐使用SpringBoot标准请求头Accept-Language。
+
+请求头参数说明，国际化是前端通过在http请求头传递参数来告知后端当前使用的语言，推荐使用SpringBoot标准请求头Accept-Language。
 ```
 Accept-Language:zh_CN
 Accept-Language:en_US
 ```
 
-### 异常
+### 异常处理
 需国际化处理异常抛出ApplicationException，无需国际化处理抛出CommonException，自定义异常继承它俩即可。   
 异常通常结合错误码一起使用，项目中请自定义错误码枚举，并实现IErrorCode接口。
 ```
@@ -159,8 +160,8 @@ public Result update(@RequestBody @Validated Demo entity) {
     return Result.success();
 }
 ```
-#### 国际化支持
-支持以错误码枚举的code作为国际化key方式定义资源消息   
+
+错误码支持以枚举的code作为国际化key方式定义资源消息   
 messages_zh_CN.properties
 ```
 1001=主键不能为空
@@ -193,8 +194,8 @@ public Result add(@RequestBody @Validated Demo entity) {
     return Result.success();
 }
 ```
-#### 国际化支持
-上述{demo.code}为国际化配置文件定义的key   
+
+校验也支持国际化处理，上述{demo.code}为国际化配置文件定义的key   
 messages_zh_CN.properties
 ```
 demo.code=编码不能为空
@@ -227,7 +228,6 @@ smart:
 ### 扩展性
 以smart-stage-starter为前缀的装配模块都是无耦合设计，任意模块的排除不影响其它模块的使用，且模块包含的装配Bean都允许自定义扩展覆盖，提升了系统的整体扩展性。
 
-#### 模块排除示例
 以下提供国际化装配模块的排除示例。
   ```
 <dependency>
