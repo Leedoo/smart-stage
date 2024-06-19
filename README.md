@@ -17,7 +17,7 @@ smart-stage                                         应用名称
 ├── smart-stage-starter-mybatisplus                 组装扩展MybatisPlus模块，贯标公共字段及其变更自动赋值的功能
   ```
 
-## 依赖关系
+## 组件依赖关系
 
 ![](./relationship.png)
 
@@ -58,14 +58,14 @@ smart-stage                                         应用名称
   ```
 
 ### 国际化
-SpringBoot默认从项目的resources/目录读取，推荐存放resources/i18n目录。标准配置如下：
+SpringBoot默认从项目的resources/目录读取，推荐存放resources/i18n目录。application.yaml标准配置如下：
 ```
 spring:
   messages:
     basename: i18n/messages
 ```
 
-资源文件配置示例：
+资源文件配置示例：   
 messages_zh_CN.properties
 ```
 message.test1=国际化消息测试
@@ -77,7 +77,7 @@ message.test1=I18n message test
 message.test2=I18n message test, param1:{0},param2:{1}
 ```
 
-支持以下两种使用方式   
+使用方式支持以下两种   
 第一种：自定义枚举实现IMessage接口。(推荐)
 ```
 import com.smart.stage.common.core.entity.IMessage;
