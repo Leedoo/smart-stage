@@ -32,7 +32,7 @@
         <spring.data.version>2.5.11</spring.data.version>
         <mysql.version>8.0.28</mysql.version>
         <maven.plugin.flatten.version>1.1.0</maven.plugin.flatten.version>
-        <maven.plugin.source.version>2.2.1</maven.plugin.source.version>
+        <maven.plugin.source.version>3.2.1</maven.plugin.source.version>
         <maven.plugin.javadoc.version>2.9.1</maven.plugin.javadoc.version>
         <maven.plugin.gpg.version>3.2.4</maven.plugin.gpg.version>
         <maven.plugin.publishing.version>0.4.0</maven.plugin.publishing.version>

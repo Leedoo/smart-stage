@@ -49,7 +49,7 @@ smart-stage                                         应用名称
 
 ### 前置条件
 
-该章节介绍如何使用smart-stage自带的Maven Archetype工具，快速创建一个推荐结构的应用。这样的模块结构能同时兼容应用的单体启动及多应用的组合启动。在开始使用工具前，您需要确保本地已完成Maven环境的准备及环境变量的相关配置。
+该章节介绍如何使用smart-stage自带的Maven Archetype工具，快速创建一个推荐结构的SpringBoot + MybatisPlus + Mysql应用。这样的模块结构能同时兼容应用的单体启动及多应用的组合启动。在开始使用工具前，您需要确保本地已完成Maven环境的准备及环境变量的相关配置。
 
 ### 创建步骤
 要创建一个新应用，请执行以下步骤：
@@ -91,7 +91,11 @@ mvn archetype:generate \
 </li>
 </ul>
 
-3.创建过程可能需要几分钟时间，完成后您将看到一个新的Maven应用目录。之后可以用IDEA打开，找到启动类BootApplication直接run启动验证。
+3.命令执行完成后，您将看到一个新的Maven应用目录。
+![](images/img1.png)
+
+4.用IDEA打开，找到<my-artifactId>-boot模块下的application.yaml文件修改成自己的数据库连接配置，并执行项目根路径下的初始化脚本init.sql，通过启动类BootApplication.java启动验证。
+![](images/img2.png)
 
 ### 应用结构说明
 ```
@@ -108,7 +112,7 @@ mvn archetype:generate \
 
 ## 接入指南
 
-### Maven依赖
+### 添加依赖
 在应用的公共模块中添加smart-stage-starter-mybatisplus依赖，无需数据库场景可以选择smart-stage-starter。
   ```
 <dependency>
