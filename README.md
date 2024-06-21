@@ -19,7 +19,7 @@ smart-stage                                         应用名称
 
 ## 组件依赖关系
 
-![](./relationship.png)
+![](images/smart-stage-relationship.png)
 
 ## 技术选型
 
@@ -44,6 +44,67 @@ smart-stage                                         应用名称
 5. **脚手架支持：** 提供了适用于不同需求场景的多款应用脚手架供选择，帮助用户快速上手；
 
 6. **高度扩展性：** 装配模块的5大公共能力都是无耦合设计，任意模块的排除不影响其它模块的使用，且模块包含的装配Bean都允许自定义扩展覆盖，提升了系统的整体扩展性。
+
+## 快速开始
+
+### 前置条件
+
+该章节介绍如何使用smart-stage自带的Maven Archetype工具，快速创建一个推荐结构的应用。这样的模块结构能同时兼容应用的单体启动及多应用的组合启动。在开始使用工具前，您需要确保本地已完成Maven环境的准备及环境变量的相关配置。
+
+### 创建步骤
+要创建一个新应用，请执行以下步骤：
+
+1.终端cd指令定位到常用的workspace目录
+```
+cd /Users/lezhou/projects
+```
+2.执行以下Maven命令
+```
+mvn archetype:generate \
+    -DarchetypeGroupId=io.github.openjoe \
+    -DarchetypeArtifactId=smart-stage-archetype \
+    -DarchetypeVersion=1.0.0 \
+    -DgroupId=<my-groupId> \
+    -DartifactId=<my-artifactId> \
+    -Dversion=<my-version> \
+    -Dpackage=<my-package> \
+    -Dsymbol=<my-symbol> \
+    -DinteractiveMode=false
+```
+
+请将上述命令中的&lt;my-groupId&gt;, &lt;my-artifactId&gt;, &lt;my-version&gt;, &lt;my-package&gt;, &lt;my-symbol&gt;替换为您的实际值。
+<ul>
+<li>
+-DgroupId=&lt;my-groupId&gt;: 指定应用的组ID，如com.smart
+</li>
+<li>
+-DartifactId=&lt;my-artifactId&gt;: 指定应用的artifact ID，如smart-sample
+</li>
+<li>
+-Dversion=&lt;my-version&gt;: 指定应用的版本号，如1.0.0-SNAPSHOT
+</li>
+<li>
+-Dpackage=&lt;my-package&gt;: 指定应用的Java包名，如com.smart.sample
+</li>
+<li>
+-Dsymbol=&lt;my-symbol&gt;: 指定一个应用的简称，它用于请求路径前缀和插件资源目录的命名，最好用纯英文小写，如sample
+</li>
+</ul>
+
+3.创建过程可能需要几分钟时间，完成后您将看到一个新的Maven应用目录。之后可以用IDEA打开，找到启动类BootApplication直接run启动验证。
+
+### 应用结构说明
+```
+<my-artifactId>                                应用名称
+├── <my-artifactId>-api                        API模块，提供Feign接口示例
+├── <my-artifactId>-service                    服务模块，提供基础CRUD示例，Controller、Service、Mapper结构分层
+└── <my-artifactId>-boot                       启动模块，应用启动入口
+  ```
+&lt;my-artifactId&gt;为脚手架必传参数，创建后替换为您的实际值。
+
+### 应用示例依赖关系
+
+![](images/smart-sample-relationship.png)
 
 ## 接入指南
 
@@ -80,7 +141,7 @@ message.test2=I18n message test, param1:{0},param2:{1}
 使用方式支持以下两种   
 第一种：自定义枚举实现IMessage接口。(推荐)
 ```
-import com.smart.stage.common.core.entity.IMessage;
+import openjoe.smart.stage.common.core.entity.IMessage;
 
 public enum MessageEnum implements IMessage {
     TEST1("message.test1"),
@@ -103,7 +164,7 @@ String test2 = MessageEnum.TEST2.getMessage("p1", "p2");
   ```
 第二种：直接使用Message工具类。
 ```
-import com.smart.stage.common.core.entity.Message;
+import openjoe.smart.stage.common.core.entity.Message;
 
 String test1 = Message.get("message.test1");
 String test2 = Message.get("message.test2", "p1", "p2");
@@ -120,8 +181,8 @@ Accept-Language:en_US
 需国际化处理异常抛出ApplicationException，无需国际化处理抛出CommonException，自定义异常继承它俩即可。   
 异常通常结合错误码一起使用，项目中请自定义错误码枚举，并实现IErrorCode接口。
 ```
-import com.smart.stage.common.core.entity.IErrorCode;
-import com.smart.stage.common.exception.ApplicationException;
+import openjoe.smart.stage.common.core.entity.IErrorCode;
+import openjoe.smart.stage.common.exception.ApplicationException;
 
 public enum ErrorCodeEnum implements IErrorCode {
 
@@ -211,7 +272,7 @@ demo.code=Code must not be null
 smart:
   stage:
     swagger:
-      base-packages: com.smart.stage.sample.controller #路径扫描,支持逗号分隔，不支持*模糊匹配
+      base-packages: openjoe.smart.stage.sample.controller #路径扫描,支持逗号分隔，不支持*模糊匹配
       title: smart-stage-sample
       description: smart-stage-sample描述
       version: 1.0.0-SNAPSHOT

@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.smart.stage.swagger.config.SwaggerConfig
+openjoe.smart.stage.swagger.config.SwaggerConfig

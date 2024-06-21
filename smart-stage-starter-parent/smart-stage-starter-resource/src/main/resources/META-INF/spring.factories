@@ -1,5 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.smart.stage.resource.config.PluginMessageSourceConfig
+openjoe.smart.stage.resource.config.PluginMessageSourceConfig
 
 org.springframework.boot.env.EnvironmentPostProcessor=\
-com.smart.stage.resource.processor.PluginEnvironmentPostProcessor
+openjoe.smart.stage.resource.processor.PluginEnvironmentPostProcessor

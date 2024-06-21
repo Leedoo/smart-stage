@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.smart.stage.common.util.ApplicationContextUtils
+openjoe.smart.stage.common.util.ApplicationContextUtils

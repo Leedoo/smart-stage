@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.smart.stage.exception.handler.DefaultExceptionHandler
+openjoe.smart.stage.exception.handler.DefaultExceptionHandler
