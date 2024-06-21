@@ -236,7 +236,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- 新方式的配置，将组件部署到OSSRH并将其发布到Central Repository-->
+                    <!-- 发布到Central Repository-->
                     <plugin>
                         <groupId>org.sonatype.central</groupId>
                         <artifactId>central-publishing-maven-plugin</artifactId>
