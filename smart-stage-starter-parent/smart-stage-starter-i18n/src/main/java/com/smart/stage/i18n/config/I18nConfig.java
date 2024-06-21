@@ -15,8 +15,6 @@ public class I18nConfig {
     @Bean
     @ConditionalOnMissingBean
     public Message i18nMessage(MessageSource messageSource) {
-        Message message = new I18nMessage(messageSource);
-        message.setLocal(message);
-        return message;
+        return new I18nMessage(messageSource);
     }
 }

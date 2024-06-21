@@ -29,13 +29,9 @@ public abstract class Message {
     };
 
     /**
-     * 当前实例，可自定义通过setLocal()覆盖
+     * 当前实例，可通过子类赋值覆盖
      */
-    private static Message local = DEFAULT;
-
-    public void setLocal(Message message) {
-        local = message;
-    }
+    protected static Message local = DEFAULT;
 
     public static String get(String key, Object... args) {
         return getOrDefault(key, key, args);

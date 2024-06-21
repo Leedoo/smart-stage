@@ -51,9 +51,9 @@ smart-stage                                         应用名称
 在应用的公共模块中添加smart-stage-starter-mybatisplus依赖，无需数据库场景可以选择smart-stage-starter。
   ```
 <dependency>
-    <groupId>com.smart</groupId>
+    <groupId>io.github.openjoe</groupId>
     <artifactId>smart-stage-starter-mybatisplus</artifactId>
-    <version>3.0.8-RELEASE</version>
+    <version>${version}</version>
 </dependency>
   ```
 
@@ -231,11 +231,11 @@ smart:
 以下提供国际化装配模块的排除示例。
   ```
 <dependency>
-    <groupId>com.smart</groupId>
+    <groupId>io.github.openjoe</groupId>
     <artifactId>smart-stage-starter-mybatisplus</artifactId>
     <exclusions>
         <exclusion>
-            <groupId>com.smart</groupId>
+            <groupId>io.github.openjoe</groupId>
             <artifactId>smart-stage-starter-i18n</artifactId>
         </exclusion>
     </exclusions>

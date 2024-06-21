@@ -19,7 +19,8 @@ public class I18nMessage extends Message {
     private static MessageSource messageSource;
 
     public I18nMessage(MessageSource messageSource) {
-        this.messageSource = messageSource;
+        Message.local = this;
+        I18nMessage.messageSource = messageSource;
     }
 
     public static String get(Locale locale, String key, Object... args) {
