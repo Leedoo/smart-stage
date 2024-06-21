@@ -2,7 +2,7 @@
 
 smart-stage是一个构建在SpringBoot之上的微服务增强框架，其主要目标是为公共机制的处理提供规范。此外，它还引入了一种插件机制，使得应用的每个业务模块能够被抽象为一个微服务插件。这种设计不仅支持单个插件的启动，也兼顾了多个插件的组合启动。
 
-## 组件介绍
+## 组件说明
 
   ```
 smart-stage                                         应用名称
@@ -87,7 +87,7 @@ mvn archetype:generate \
 -Dpackage=&lt;my-package&gt;: 指定应用的Java包名，如com.smart.sample
 </li>
 <li>
--Dsymbol=&lt;my-symbol&gt;: 指定一个应用的简称，它用于请求路径前缀和插件资源目录的命名，最好用纯英文小写，如sample
+-Dsymbol=&lt;my-symbol&gt;: 指定应用的简称，它用于请求路径前缀和插件资源目录的命名，最好用纯英文小写，如sample
 </li>
 </ul>
 
