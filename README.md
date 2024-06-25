@@ -49,7 +49,11 @@ smart-stage                                         应用名称
 
 ### 前置条件
 
-该章节介绍如何使用smart-stage自带的Maven Archetype工具，快速创建一个推荐结构的SpringBoot + MybatisPlus + Mysql应用。这样的模块结构能同时兼容应用的单体启动及多应用的组合启动。在开始使用工具前，您需要确保本地已完成Maven环境的准备及环境变量的相关配置。
+该章节介绍如何使用smart-stage自带的Maven Archetype脚手架工具，快速创建一个推荐结构的SpringBoot + MybatisPlus应用。在开始使用工具前，您需要满足以下环境准备：
+<ul>
+    <li>Maven环境及其环境变量配置</li>
+    <li>Mysql数据库</li>
+</ul>
 
 ### 创建步骤
 要创建一个新应用，请执行以下步骤：
