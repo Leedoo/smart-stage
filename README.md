@@ -78,13 +78,13 @@ mvn archetype:generate \
 -DgroupId=&lt;my-groupId&gt;: 指定应用的组ID，如com.smart
 </li>
 <li>
--DartifactId=&lt;my-artifactId&gt;: 指定应用的artifact ID，如smart-stage-sample
+-DartifactId=&lt;my-artifactId&gt;: 指定应用的artifact ID，如smart-sample
 </li>
 <li>
 -Dversion=&lt;my-version&gt;: 指定应用的版本号，如1.0.0-SNAPSHOT
 </li>
 <li>
--Dpackage=&lt;my-package&gt;: 指定应用的Java包名，如com.smart.stage.sample
+-Dpackage=&lt;my-package&gt;: 指定应用的Java包名，如com.smart.sample
 </li>
 <li>
 -Dsymbol=&lt;my-symbol&gt;: 指定应用的简称，它用于请求路径前缀和插件资源目录的命名，最好用纯英文小写，如sample
@@ -108,7 +108,7 @@ mvn archetype:generate \
 
 ### 应用示例依赖关系
 
-![](images/smart-stage-sample.png)
+![](images/smart-sample.png)
 
 ## 接入指南
 
@@ -276,9 +276,9 @@ demo.code=Code must not be null
 smart:
   stage:
     swagger:
-      base-packages: openjoe.smart.stage.sample.controller #路径扫描,支持逗号分隔，不支持*模糊匹配
-      title: smart-stage-sample
-      description: smart-stage-sample描述
+      base-packages: com.smart.sample.controller #路径扫描,支持逗号分隔，不支持*模糊匹配
+      title: smart-sample
+      description: smart-sample描述
       version: 1.0.0-SNAPSHOT
 ```
 
