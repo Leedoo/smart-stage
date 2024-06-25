@@ -32,6 +32,7 @@
         <spring.data.version>2.5.11</spring.data.version>
         <mysql.version>8.0.28</mysql.version>
         <maven.plugin.flatten.version>1.1.0</maven.plugin.flatten.version>
+        <maven.plugin.compiler.version>3.8.1</maven.plugin.compiler.version>
         <maven.plugin.source.version>3.2.1</maven.plugin.source.version>
         <maven.plugin.javadoc.version>2.9.1</maven.plugin.javadoc.version>
         <maven.plugin.gpg.version>3.2.4</maven.plugin.gpg.version>
@@ -187,6 +188,16 @@
             <id>release</id>
             <build>
                 <plugins>
+                    <!-- compiler -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>${maven.plugin.compiler.version}</version>
+                        <configuration>
+                            <source>${maven.compiler.source}</source>
+                            <target>${maven.compiler.target}</target>
+                        </configuration>
+                    </plugin>
                     <!-- Source -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
