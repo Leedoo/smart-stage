@@ -23,6 +23,8 @@
 
     <properties>
         <revision>1.0.1</revision>
+        <spring.cloud.dependencies.version>2020.0.5</spring.cloud.dependencies.version>
+        <spring.cloud.alibaba.dependencies.version>2021.1</spring.cloud.alibaba.dependencies.version>
         <springfox.version>3.0.0</springfox.version>
         <mybatisplus.version>3.5.2</mybatisplus.version>
         <maven.plugin.flatten.version>1.1.0</maven.plugin.flatten.version>
@@ -75,6 +77,24 @@
                 <artifactId>smart-stage-starter-mybatisplus</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <!-- Spring Cloud Dependencies Management -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba.dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-boot-starter</artifactId>
