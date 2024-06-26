@@ -27,7 +27,6 @@ smart-stage                                         应用名称
 | ---------------------- | ------- | ---------------- |
 | spring-boot             | 2.5.13   | 容器+MVC框架     |
 | spring-boot-starter-validation    | 2.5.13   | 校验  |
-| druid-spring-boot-starter                | 1.2.8   | 数据库连接池          |
 | mybatis-plus-boot-starter           | 3.5.2   | MyBatis增强工具  |
 | springfox-boot-starter      | 3.0.0   | 文档     |
 
@@ -67,7 +66,7 @@ cd /Users/lezhou/projects
 mvn archetype:generate \
     -DarchetypeGroupId=io.github.openjoe \
     -DarchetypeArtifactId=smart-stage-archetype \
-    -DarchetypeVersion=1.0.0 \
+    -DarchetypeVersion=1.0.1 \
     -DgroupId=<my-groupId> \
     -DartifactId=<my-artifactId> \
     -Dversion=<my-version> \
