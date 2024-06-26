@@ -2,6 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.13</version>
+        <relativePath/>
+    </parent>
     <groupId>io.github.openjoe</groupId>
     <artifactId>smart-stage</artifactId>
     <name>${project.artifactId}</name>
@@ -17,10 +23,6 @@
 
     <properties>
         <revision>1.0.1</revision>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-        <springboot.version>2.5.13</springboot.version>
         <springfox.version>3.0.0</springfox.version>
         <mybatisplus.version>3.5.2</mybatisplus.version>
         <maven.plugin.flatten.version>1.1.0</maven.plugin.flatten.version>
@@ -72,27 +74,6 @@
                 <groupId>io.github.openjoe</groupId>
                 <artifactId>smart-stage-starter-mybatisplus</artifactId>
                 <version>${revision}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-jdbc</artifactId>
-                <version>${springboot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-validation</artifactId>
-                <version>${springboot.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.springfox</groupId>
