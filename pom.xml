@@ -22,7 +22,7 @@
     </modules>
 
     <properties>
-        <revision>1.0.1</revision>
+        <revision>1.0.2</revision>
         <spring.cloud.dependencies.version>2020.0.5</spring.cloud.dependencies.version>
         <spring.cloud.alibaba.dependencies.version>2021.1</spring.cloud.alibaba.dependencies.version>
         <springfox.version>3.0.0</springfox.version>
@@ -78,7 +78,6 @@
                 <version>${revision}</version>
             </dependency>
 
-            <!-- Spring Cloud Dependencies Management -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
