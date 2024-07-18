@@ -22,7 +22,7 @@
     </modules>
 
     <properties>
-        <revision>1.0.2</revision>
+        <revision>1.0.3</revision>
         <spring.cloud.dependencies.version>2020.0.5</spring.cloud.dependencies.version>
         <spring.cloud.alibaba.dependencies.version>2021.1</spring.cloud.alibaba.dependencies.version>
         <springfox.version>3.0.0</springfox.version>

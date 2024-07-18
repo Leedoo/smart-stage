@@ -17,7 +17,7 @@ public class Result<T> {
 	/**
 	 * 消息
 	 */
-	private String msg;
+	private String message;
 
 	/**
 	 * 数据
@@ -27,13 +27,13 @@ public class Result<T> {
 	public Result() {
 	}
 
-	public Result(Integer code, String msg) {
+	public Result(Integer code, String message) {
 		this.code = code;
-		this.msg = msg;
+		this.message = message;
 	}
 
-	public Result(Integer code, String msg, T data) {
-		this(code, msg);
+	public Result(Integer code, String message, T data) {
+		this(code, message);
 		this.data = data;
 	}
 
@@ -60,12 +60,12 @@ public class Result<T> {
 		return this;
 	}
 
-	public String getMsg() {
-		return msg;
+	public String getMessage() {
+		return message;
 	}
 
-	public Result<T> setMsg(String msg) {
-		this.msg = msg;
+	public Result<T> setMessage(String message) {
+		this.message = message;
 		return this;
 	}
 
@@ -87,7 +87,7 @@ public class Result<T> {
 	public String toString() {
 		return "Result{" +
 				"code=" + code +
-				", msg='" + msg + '\'' +
+				", message='" + message + '\'' +
 				", data=" + data +
 				'}';
 	}

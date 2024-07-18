@@ -7,9 +7,9 @@ import openjoe.smart.stage.core.entity.IErrorCode;
  */
 public enum ResultEnum implements IErrorCode {
 
-    SUCCESS(200, "成功"),
-    ERROR(-1000, "系统内部错误"),
-    VALIDATION_ERROR(-2000, "参数校验错误");
+    SUCCESS(1, "成功"),
+    VALIDATION_ERROR(9998, "参数校验错误"),
+    ERROR(9999, "未知错误");
 
     private Integer code;
     private String desc;

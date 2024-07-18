@@ -66,7 +66,7 @@ cd /Users/lezhou/projects
 mvn archetype:generate \
     -DarchetypeGroupId=io.github.openjoe \
     -DarchetypeArtifactId=smart-stage-archetype \
-    -DarchetypeVersion=1.0.2 \
+    -DarchetypeVersion=1.0.3 \
     -DgroupId=<my-groupId> \
     -DartifactId=<my-artifactId> \
     -Dversion=<my-version> \
